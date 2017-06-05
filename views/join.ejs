@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <!--<script src="/javascripts/join_instagram.js"></script>-->
+    <style>
+    body {  background-color: rgba(189, 187, 180, 0.15); }
+    #image
+    {
+      width: 360px;
+      height: 600px;
+
+    }
+    #a_store
+    {
+      width: 140px;
+      height: 48px;
+      display: inline-block;
+
+    }
+    #g_store
+    {
+      width: 140px;
+      display: inline-block;
+    }
+    #all
+    {
+      display: inline-flex;
+      margin: 0 auto;
+    }
+    #right_all
+    {
+      margin-left: 30px;
+      text-align: center;
+      display: inline-block;
+    }
+    #right_form
+    {
+      border: 1px solid rgba(158, 158, 158, 0.35);
+      background-color: white;
+      width: 320px;
+      padding: 20px;
+    }
+    #right
+    {
+      margin-top: 30px;
+    }
+    #right_down
+    {
+    }
+    #box
+    {
+      border: 1px solid rgba(158, 158, 158, 0.35);
+      text-align:center;
+      background-color: white;
+    }
+    #join
+    {
+      width: 300px;
+      margin-top: 20px;
+    }
+    #no1
+    {
+      color: red;
+      text-align: center;
+      display: none;
+    }
+    #no2
+    {
+      color: red;
+      text-align: center;
+      display: none;
+    }
+    #no3
+    {
+      color: red;
+      text-align: center;
+      display: none;
+    }
+    </style>
+  </head>
+  <body style="margin-left: 250px; margin-right: 250px;">
+    <div id=all>
+    <img src = "/images/폰.png" alt = "logo" id=image>
+    <div id=right_all>
+    <div id="right_up">
+      <form action = "input.jsp" method = "post" id="right_form">
+        <div style="text-align:center;">
+          <p style="font-size:36px;"> Instagram </p>
+        </div>
+        <div style="text-align:center;">
+
+        <strong style="color:gray; font-size:20px; text-align:center;">친구들의 사진과 동영상을 보려면 가입하세요 </strong>
+      </div>
+        <a href=page1 target=“_blank>
+          <img src = "/images/페이스북으로 로그인 버튼.png" alt = "logo" style="width : 300px; margin-top : 20px;">
+        </a>
+        <p>--------------------또는--------------------</p>
+        <input type="text" name="email" placeholder="휴대폰 번호 또는 이메일 주소" value="" style=" width:300px; height:30px;" id="email"/><br />
+        <input type="text" name="name" placeholder="성명" value="" style=" width:300px; height:30px; margin-top: 10px;" id="name" /><br />
+        <input type="text" name="user_name" placeholder="사용자 이름" value="" style="width:300px; height:30px; margin-top: 10px;" id="user_name"/><br />
+        <input type="password" name="password" placeholder="비밀번호" value="" style="width:300px; height:30px; margin-top: 10px;" id="password"/><br />
+
+          <img src = "/images/가입 버튼.png" alt = "logo" id="join" >
+          <p id="no1">필수 항목입니다<p>
+          <p id="no2">6자 이상의 비밀번호를 만드세요.<p>
+          <p id="no3">이메일 또는 휴대폰 번호 형식이 아닙니다.<p>
+        <div style="text-align:center;">
+        <p style="color:gray;">가입하면 Instgram의 <strong>약관</strong> 및 <strong>개인정보처리방침</strong>에 동의하게 됩니다.</p>
+      </div>
+      </div>
+        <div id="right">
+          <form action = "input.jsp" method = "post">
+              <div id="box">
+          <p>계정이 있으신가요? <a href =login target=“_blank>로그인</a></p>
+        </div>
+        </form>
+        <form action = "input.jsp" method = "post">
+        <div style="text-align:center;" id="right_down">
+              <p> 앱을 다운로드하세요.</P>
+          <a href = “example.html” target=“_blank>
+            <img src = "/images/애플스토어.png" alt = "logo" id="a_store">
+          </a>
+          <a href = “example.html” target=“_blank>
+            <img src = "/images/구글스토어.png" alt = "logo" id="g_store">
+          </a>
+        </div>
+        </form>
+      </form>
+    </div>
+    </div>
+    <!--비밀번호는 6자리 이상이여랴함 아닐때 "6자 이상의 비밀번호를 만드세요." 라 하고
+    이메일 형식이 틀릴때 ,"올바른 이메일 주소를 입력하세요."라고 함 -->
+    <script>
+    /*
+    var join=document.getElementById("join")
+    join.onclick=function()
+    {
+      var text1=document.getElementById("no1")
+      var text2=document.getElementById("no2")
+      var text3=document.getElementById("no3")
+      var  email_v=document.getElementById("email").value;
+      var  name_v=document.getElementById("name").value;
+      var user_name_v=document.getElementById("user_name").value;
+      var  password_v=document.getElementById("password").value;
+      var  email_a=document.getElementById("email");
+      var  name_a=document.getElementById("name");
+      var user_name_a=document.getElementById("user_name");
+      var  password_a=document.getElementById("password");
+      var a= /^01(?:0|1|[6-9])-(?:\d{3}|\d{4})-\d{4}$/ //핸드폰 번호 허용
+      var b= /^[a-zA-Z0-9]+@[a-zA-Z0-9]$/ //이메일 허용
+
+    //  var a=/^01(?:0|1|[6-9]) - (?:\d{3}|\d{4}) - \d{4}$/ //핸드폰 번호 허용
+    //  var b=/^[a-zA-Z0-9]+@[a-zA-Z0-9]+$/ //이메일 허용
+    //  var a_test=email_v.test(a)
+    //  var b_test=email_v.test(b)
+
+      email_a.style.borderColor = "initial"
+      text1.style.display = "none"
+      user_name_a.style.borderColor = "initial"
+      text3.style.display = "none"
+
+      if (email_v=="")
+      {
+        email_a.style.borderColor = "red"
+        text1.style.display = "block"
+
+      }
+      else if(a.test(email_v) == false && b.test(email_v) == false)
+      {
+        email_a.style.borderColor = "red"
+        text3.style.display = "block"
+      }
+
+      if (user_name_v=="")
+      {
+        user_name_a.style.borderColor = "red"
+        text1.style.display = "block"
+
+      }
+      if (password_v.length==0)
+      {
+        password_a.style.borderColor = "red"
+        text1.style.display = "block"
+
+      }
+      else if (password_v.length<6)
+      {
+        text2.style.display = "block"
+        password_a.style.borderColor = "red"
+      }
+      else {
+
+          password_a.style.borderColor = "initial"
+          text2.style.display = "none"
+      }
+    }*/
+  /*  join.onclick=function()
+    {
+      //var name=document.getElementById("username").value;
+      //var password=document.getElementById("password").value;
+      var  email=document.getElementById("email").value;
+      var  name=document.getElementById("name").value;
+      $.ajax({ url: '/login',
+              dataType: 'json',
+              type: 'POST',
+              data: { 'id' : name,
+                      'password':password ,
+              success: function(data) {
+                // data: 백엔드에서 requestBody 형식으로 보낸 데이터를 받는다.
+                  console.log(data);
+                //return 받은 데이터를 처리
+              },
+              error: function(data){
+              } });
+              if(document.getElementById("username").value == 'abcd' && document.getElementById("username").value =='abcd')
+              {
+                 location.href="page1"
+              }
+              else {
+                {
+                  alert('login fail');
+                }
+              }
+            }*/
+      $(document).ready(function() {
+              $('#join').click(function() {
+                //var name = $('#name').val();
+                //var email = $('#email').val();
+                var user_id = $('#user_name').val();
+                var password = $('#password').val();
+                var data =
+                {
+                //  'email': email,
+                //  'name' : name,
+                  'id': user_id,
+                  'password': password
+                }
+                $.ajax({
+                  type: "POST",
+                  url: "/join",
+                  contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+                  cache: false,
+                  datatype: "json", // expecting JSON to be returned
+                  data: data,
+                  success: function(result) {
+                    alert('가입 성공!');
+                    console.log(result);
+                    if (result.status == 200) {
+                      self.isEditMode(!self.isEditMode());
+                    }
+                  },
+                  error: function(error) {
+                    alert('가입 실패!');
+                  }
+                }).complete(function() {
+                  $(window).attr('location','/join');
+                });
+              });
+            });
+    </script>
+  </body>
+
+  <!--<footer>써보기>-->
+</html>

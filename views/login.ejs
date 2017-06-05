@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <style>
+      body
+      {
+        background-color: rgba(189, 187, 180, 0.15);
+        padding-left: 20%;
+        padding-right: 20%;
+      }
+      #phone
+      {
+        width: 320px;
+        float: left;
+        height: 600px;
+      }
+
+      #right_top_form
+      {
+        border: 1px solid rgba(158, 158, 158, 0.35);
+        background-color: white;
+        display: inline-block;
+        width: 320px;
+        height: 350px;
+
+      }
+      #right_middle_form
+      {
+        border: 1px solid rgba(158, 158, 158, 0.35);
+        background-color: white;
+        display: inline-block;
+        width: 320px;
+        height: 100px;
+        margin-top: 30px;
+        text-align: center;
+      }
+      #all
+      {
+        text-align: center;
+        display: inline-block;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      #username
+      {
+        width: 250px;
+        height: 30px;
+        margin-bottom: 20px;s
+      }
+      #password
+      {
+        width: 250px;
+        height: 30px;
+        margin-bottom: 20px;
+      }
+      #right_bottom_form
+      {
+        text-align: center;
+        display: inline-block;
+      }
+      #log_in
+      {
+        width: 250px;
+        margin-top: 10px;
+        height: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="all">
+    <img src="/images/폰.png" id="phone">
+    <div id="right_top_form">
+      <strong><p style="font-size:40px; font-style: italic;"> Instgram </p></strong>
+    <form action="input.jsp" method="post">
+      <input type="email" name="username" style="font-size:15px;" value="" placeholder="전화번호,사용자 이름 또는 이메일" id="username"><br />
+      <input type="password" name="password" style="font-size:15px;" value="" placeholder="비밀번호" id="password"><br />
+      <img src="/images/로그인.png" id="log_in">
+    </div>
+    </form>
+    <div id="right_middle_form">
+      <p style="margin-top: 40px;">계정이 없으신가요?<a href = join target=“_blank>가입하기></a><p>
+    </div>
+  <div id="right_bottom_form">
+    <p>앱을 다운로드하세요.</p>
+    <a href = “example.html” target=“_blank><img src="/images/애플스토어.png" style="width : 150px; height: 52px;"></a>
+    <a href = “example.html” target=“_blank><img src="/images/구글스토어.png" style="width : 150px;"></a>
+  </div>
+  </div>
+  <script>
+  var rogin=document.getElementById("log_in");
+/*
+  rogin.onclick=function()
+  {
+    var name=document.getElementById("username").value;
+    var password=document.getElementById("password").value;
+    $.ajax({ url: '/login',
+            dataType: 'json',
+            type: 'POST',
+            data: { 'id' : name, 'password':password },
+
+            success: function(data) {
+              // data: 백엔드에서 requestBody 형식으로 보낸 데이터를 받는다.
+                console.log(data);
+
+              //return 받은 데이터를 처리
+            },
+            error: function(data){
+            } });
+            if(document.getElementById("username").value == 'abcd' && document.getElementById("username").value =='abcd')
+            {
+               location.href="page1"
+            }
+            else {
+              {
+                alert('login fail');
+              }
+            }
+    }*/
+    $(document).ready(function() {
+      $('#log_in').click(function() {
+        var user_id = $('#username').val();
+        var password = $('#password').val();
+        var data = {
+          'id': user_id,
+          'password': password
+        }
+        $.ajax({
+          type: "POST",
+          url: "/login",
+          contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+          cache: false,
+          datatype: "json", // expecting JSON to be returned
+          data: data,
+          success: function(result) {
+            console.log(result);
+            if (result.status == 200) {
+              self.isEditMode(!self.isEditMode());
+            }
+          },
+          error: function(error) {
+            alert('로그인 실패!');
+          }
+        }).complete(function() {
+          $(window).attr('location','/login');
+        });
+      });
+    });
+
+</script>
+  </body>
+
+</html>

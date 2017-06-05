@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <style>
+    #logo_mark
+    {
+      background-color: white;
+      display: inline-block;
+      border-color: white;
+      border-width: 0px;
+    }
+
+    body
+    {
+      background-color: rgba(189, 187, 180, 0.15);
+      margin: 0px;
+      padding: 0px;
+
+    }
+    header
+    {
+      height: 100px;
+      margin: 0px;
+      background-color: white;
+      padding-left: 80px;
+      padding-right: 80px;
+      padding-bottom: 10px;
+    }
+      article
+      {
+        padding:373px;
+        padding-top: 100px;
+      }
+      #logo
+      {
+        background-color: white;
+        display: inline-block;
+        border-color: white;
+        border-width: 0px;
+        float: left;
+      }
+      #logo_img
+      {
+        width: 200px;
+      }
+      #buttons
+      {
+        text-align: right;
+      }
+
+      #button1
+      {
+        background-color: white;
+        border-color: white;
+        border-width: 0px;
+      }
+      #button2
+      {
+        background-color: white;
+        border-color: white;
+        border-width: 0px;
+
+      }
+      #button3
+      {
+        background-color: white;
+        border-color: white;
+        border-width: 0px;
+      }
+      #button1_img
+      {
+        width: 40px;
+        margin-top: 20px;
+      }
+      #button2_img
+      {
+        width: 40px;
+      }
+      #button3_img
+      {
+        width: 40px;
+      }
+      #search_form
+      {
+        text-align: center;
+        margin-right: 150px;
+      }
+      #search
+      {
+        text-align: center;
+        width: 250px;
+        height: 35px;
+      }
+      #photo
+      {
+        width: 516px;
+      }
+      #box
+      {
+        background-color: white;
+        border: 1px solid rgba(158, 158, 158, 0.35);
+        width: 516px;
+        box-shadow: none;
+      }
+      #text1
+      {
+        padding-left: 20px;
+      }
+      #text2
+      {
+        padding-left: 20px;
+      }
+      #reply
+      {
+        border-width: 0px;
+        width: 400px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        height: 40px;
+        float: left;
+      }
+      #button4
+      {
+        display: inline-block;
+        float: left;
+        width: 40px;
+        margin-left: 10px;
+        margin-right: 15px;
+        margin-top: 10px;
+      }
+      #button5
+      {
+        display: inline-block;
+        width: 40px;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <button type="button" onclick="alert()" id="logo">
+        <img src="/images/인스타.png" id="logo_img">
+      </button>
+      <div id="buttons">
+      <button type="button" onclick="alert()" id="button1">
+        <img src="/images/나침반.png" id="button1_img">
+      </button>
+      <button type="button" onclick="alert()" id="button2">
+        <img src="/images/하트.png" id="button2_img">
+      </button>
+      <button type="button"  id="button3">
+        <a href=page2 target=“_blank>
+        <img src="/images/사람.png" id="button3_img">
+      </a>
+    </div>
+  <div id="search_form">
+    <form action="input.jsp" method="post" >
+      <input type="search" name="search" placeholder="검색" id="search">
+    </form>
+  </div>
+    </header>
+ <article>
+   <div id="box" onmouseover=shin_onmouseover() onmouseout=shin_onmouseout()>
+     <div id="text1">
+   <p> 올린사람 </p>
+ </div>
+   <img src="/images/안녕.jpg" alt="logo" id="photo">
+   <div id="text2">
+   <strong> 좋아요 970,521개 </strong>
+   <p style="font-size:20px;">아무말 아무말 아무말</p>
+   <a href = “example.html” target=“_blank style="color:gray;">댓글 3,529개 모두 보기</a>
+   <p style="font-size:15px;"><strong>누군가</strong> 헤헷 ♥♡<p>
+   <p></p>
+ </div>
+ <div id="bottom">
+     <img src="/images/하트1.png" id="button4" >
+   <input type="text" name="reply" placeholder="댓글 달기" id="reply" /><br />
+   <img src="/images/점점점.png" id="button5" >
+ </div>
+ </div>
+
+ </article>
+
+
+ <script>
+  var search=document.getElementById("search");
+  var heart=document.getElementById("button4");
+  var shin = document.getElementById("box");
+  var i=0;
+  function shin_onmouseover()
+  {
+    shin.style.boxShadow= "0px 0px 20px 10px rgba(158, 158, 158, 0.35)";
+  }
+  function shin_onmouseout()
+  {
+    shin.style.boxShadow= "0px 0px 0px 0px white"
+  }
+  heart.onclick = function()
+    {
+      if(i%2==0)
+      {
+        heart.src="/images/하트2.png";
+      }
+      else
+      {
+        heart.src="/images/하트1.png";
+      }
+      i=i+1;
+    }
+    search.onclick= function()
+    {
+      search.style.textAlign ="left"
+    }
+    </script>
+  </body>
+</html>

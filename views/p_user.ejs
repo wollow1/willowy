@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <title><%= title %></title>
+   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+   <script src="/javascripts/login.js"></script>
+   <link rel='stylesheet' href='/stylesheets/style.css' />
+ </head>
+ <body>
+   <h1><a href='/practice'>Instagram</a></h1>
+   <h2>user</h2>
+     <ol type = "1">
+     <% for(var i=0; i<users.length;i++){ %>
+
+       <li>
+           <%= users[i].name %>
+         </li>
+ <% } %>
+ </ol>
+ </body>
+</html>

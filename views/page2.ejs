@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <style>
+    body
+    {
+      margin: 0px;
+      background-color: rgba(189, 187, 180, 0.15);
+      padding: 0px;
+    }
+    header
+    {
+      height: 100px;
+      margin: 0px;
+      background-color: white;
+      padding-left: 80px;
+      padding-right: 80px;
+      padding-bottom: 10px;
+    }
+    article
+    {
+      padding-left: 25%;
+      padding-right: 25%;
+    }
+    #logo
+    {
+      background-color: white;
+      display: inline-block;
+      border-color: white;
+      border-width: 0px;
+      float: left;
+    }
+    #logo_img
+    {
+      width: 200px;
+    }
+    #buttons
+    {
+      text-align: right;
+    }
+
+    #button1
+    {
+      background-color: white;
+      border-color: white;
+      border-width: 0px;
+    }
+    #button2
+    {
+      background-color: white;
+      border-color: white;
+      border-width: 0px;
+
+    }
+    #button3
+    {
+      background-color: white;
+      border-color: white;
+      border-width: 0px;
+    }
+    #button1_img
+    {
+      width: 40px;
+      margin-top: 20px;
+    }
+    #button2_img
+    {
+      width: 40px;
+    }
+    #button3_img
+    {
+      width: 40px;
+    }
+    #search_form
+    {
+      text-align: center;
+      margin-right: 150px;
+    }
+    #search
+    {
+      width: 250px;
+      height: 35px;
+    }
+    #user_img
+    {
+      width: 140px;
+      border-radius: 70px;
+    }
+    #profile_name
+    {
+      font-size: 25px;
+      color: gray;
+    }
+    #more
+    {
+
+      width: 30px;
+    }
+    #profile_right
+    {
+      margin-left: 200px;
+    }
+    #profile_button
+    {
+      margin: 20px;
+    }
+    #post
+    {
+      width: 185px;
+      margin-left: 20px;
+      margin-top: 60px;
+      float: left;
+
+    }
+
+
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    /* Modal Content */
+    .modal-content {
+        position: relative;
+        background-color: #fefefe;
+        margin: auto;
+        padding: 0;
+        border: 1px solid #888;
+        width: 40%;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        -webkit-animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-name: animatetop;
+        animation-duration: 0.4s
+    }
+
+    .close {
+        color: white;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .modal-header {
+      text-align: center;
+      padding: 2px 16px;
+      background-color: white;
+      border: 1px solid rgba(158, 158, 158, 0.35);
+    }
+
+
+    .modal-footer {
+      text-align: center;
+      padding: 2px 16px;
+      background-color: white;
+    border: 1px solid rgba(158, 158, 158, 0.35);
+    }
+
+
+    </style>
+
+  </head>
+  <body>
+    <header>
+      <button type="button" onclick="alert()" id="logo">
+        <img src="/images/인스타.png" id="logo_img">
+      </button>
+      <div id="buttons">
+      <button type="button" onclick="alert()" id="button1">
+        <img src="/images/나침반.png" id="button1_img">
+      </button>
+      <button type="button" onclick="alert()" id="button2">
+        <img src="/images/하트.png" id="button2_img">
+      </button>
+      <button type="button" onclick="alert()" id="button3">
+        <img src="/images/사람.png" id="button3_img">
+      </button>
+    </div><div id="search_form">
+    <form action="input.jsp" method="post" >
+      <input type="search" name="search" placeholder="검색" id="search">
+    </form>
+  </div>
+    </header>
+    <article>
+
+      <div id="profile">
+        <img src="/images/요정.jpg" align="left" id="user_img">
+        <div id="profile_right">
+        <p id=profile_name>ShinDongmin
+        <button type="button" onclick="alert()" id="profile_button">
+          프로필 편집
+        </button>
+        <img src="/images/점점점.png" id="more">
+      </p>
+      <div style="float:left; margin-right:50px;" id="cnt">
+      게시물 개
+    </div>
+    <div style="float:left; margin-right:50px;">
+      팔로워 1명
+    </div>
+    <div style= "margin-right:50px;">
+      팔로우 1명
+    </div></br>
+    <div> 신동민 </div>
+    </p>
+  </div>
+  <div id="shin">
+      <img src="/images/뀨.jpg" align="left" id="post">
+    </div>
+</div>
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+
+          <p>로그아웃</p>
+        </div>
+        <div class="modal-footer">
+          <p>취소<p>
+        </div>
+      </div>
+
+    </div>
+    </article>
+
+  </body>
+  <script>
+  var post=document.getElementById("shin")
+  var y = post.innerHTML
+  var i = prompt('숫자를 입력하세요.','숫자');
+  function myfunction()
+  {
+    for (var j=1;i>j;j=j+1)
+    {
+      var x = post.innerHTML
+      post.innerHTML=x+y
+    }
+    document.getElementById("cnt").innerHTML = "게시물 "+i+"개"
+  }
+  myfunction()
+
+
+ var cancel = document.getElementsByClassName("modal-footer");
+
+
+ var modal = document.getElementById('myModal');
+
+
+ var pop_up= document.getElementById("more");
+
+
+ var span = document.getElementsByClassName("close")[0];
+
+ pop_up.onclick = function()
+ {
+     modal.style.display = "block";
+ }
+
+
+ cancel.onclick = function()
+ {
+     modal.style.display = "none";
+ }
+
+
+
+ window.onclick = function(event) {
+     if (event.target == modal) {
+         modal.style.display = "none";
+     }
+ }
+  </script>
+</html>
